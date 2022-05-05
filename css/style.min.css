@@ -323,7 +323,7 @@ template {
   min-height: 780px;
   padding-top: 350px;
   overflow: hidden;
-  background: url(../../img/backround-promo.png) 100% 0 / cover no-repeat;
+  background: url(../img/backround-promo.png) 100% 0 / cover no-repeat;
 }
 .promo-container {
   padding: 0;
@@ -383,7 +383,7 @@ template {
 @media (max-width: 768px) {
   .promo {
     padding-top: 250px;
-    background: url(../../img/background-promo-min.jpg) center center/cover
+    background: url(../img/background-promo-min.jpg) center center/cover
       no-repeat;
   }
   .promo-wrapper {
