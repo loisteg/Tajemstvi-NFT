@@ -1,6 +1,14 @@
 .steps {
   padding-top: 300px;
   padding-bottom: 375px;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: all 0.6s;
+
+  &.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
 
   background: url(../../img/third-section-background.jpg) center center / cover
     no-repeat;
@@ -17,72 +25,105 @@
     z-index: 2;
     width: 300px;
     height: 320px;
+    transform-style: preserve-3d;
+    perspective: 1000px;
 
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
 
+    &:hover .wrp {
+      transform: rotate(-30deg) skew(25deg) translateX(calc(35px * var(--i)))
+        translateY(calc(-35px * var(--i)));
+      box-shadow: -20px 20px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .wrp {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.5s;
+      z-index: calc(1 + var(--i));
+      opacity: calc(1 - (0.2 * var(--j)));
+    }
+
     &:nth-child(1) {
-      background: rgb(6, 142, 138);
-      background: linear-gradient(
-        150deg,
-        rgba(6, 142, 138, 1) 0%,
-        rgba(75, 240, 242, 1) 95%,
-        rgba(75, 240, 242, 1) 100%
-      );
+      .wrp {
+        background: rgb(6, 142, 138);
+        background: linear-gradient(
+          150deg,
+          rgba(6, 142, 138, 1) 0%,
+          rgba(75, 240, 242, 1) 95%,
+          rgba(75, 240, 242, 1) 100%
+        );
+      }
     }
     &:nth-child(2) {
       margin-top: -250px;
-      background: rgb(6, 142, 138);
-      background: linear-gradient(
-        184deg,
-        rgba(6, 142, 138, 1) 0%,
-        rgba(75, 240, 242, 1) 95%,
-        rgba(75, 240, 242, 1) 100%
-      );
+      .wrp {
+        background: rgb(6, 142, 138);
+        background: linear-gradient(
+          184deg,
+          rgba(6, 142, 138, 1) 0%,
+          rgba(75, 240, 242, 1) 95%,
+          rgba(75, 240, 242, 1) 100%
+        );
+      }
     }
     &:nth-child(3) {
-      background: rgb(6, 142, 138);
-      background: linear-gradient(
-        205deg,
-        rgba(6, 142, 138, 1) 0%,
-        rgba(75, 240, 242, 1) 95%,
-        rgba(75, 240, 242, 1) 100%
-      );
+      .wrp {
+        background: rgb(6, 142, 138);
+        background: linear-gradient(
+          205deg,
+          rgba(6, 142, 138, 1) 0%,
+          rgba(75, 240, 242, 1) 95%,
+          rgba(75, 240, 242, 1) 100%
+        );
+      }
     }
     &:nth-child(4) {
-      background: rgb(6, 142, 138);
-      background: linear-gradient(
-        42deg,
-        rgba(6, 142, 138, 1) 0%,
-        rgba(75, 240, 242, 1) 95%,
-        rgba(75, 240, 242, 1) 100%
-      );
+      .wrp {
+        background: rgb(6, 142, 138);
+        background: linear-gradient(
+          42deg,
+          rgba(6, 142, 138, 1) 0%,
+          rgba(75, 240, 242, 1) 95%,
+          rgba(75, 240, 242, 1) 100%
+        );
+      }
     }
     &:nth-child(5) {
       margin-top: 200px;
-      background: rgb(6, 142, 138);
-      background: linear-gradient(
-        0deg,
-        rgba(6, 142, 138, 1) 0%,
-        rgba(75, 240, 242, 1) 95%,
-        rgba(75, 240, 242, 1) 100%
-      );
+      .wrp {
+        background: rgb(6, 142, 138);
+        background: linear-gradient(
+          0deg,
+          rgba(6, 142, 138, 1) 0%,
+          rgba(75, 240, 242, 1) 95%,
+          rgba(75, 240, 242, 1) 100%
+        );
+      }
     }
     &:nth-child(6) {
-      background: rgb(6, 142, 138);
-      background: linear-gradient(
-        315deg,
-        rgba(6, 142, 138, 1) 0%,
-        rgba(75, 240, 242, 1) 95%,
-        rgba(75, 240, 242, 1) 100%
-      );
+      .wrp {
+        background: rgb(6, 142, 138);
+        background: linear-gradient(
+          315deg,
+          rgba(6, 142, 138, 1) 0%,
+          rgba(75, 240, 242, 1) 95%,
+          rgba(75, 240, 242, 1) 100%
+        );
+      }
     }
 
     &-number {
       font-size: 150px;
       font-weight: bold;
+      text-align: center;
     }
     &-descr {
       font-size: 20px;
@@ -91,8 +132,8 @@
   }
   .round {
     position: absolute;
-    width: 925px;
-    height: 925px;
+    width: 850px;
+    height: 850px;
     border: #4bf0f2 10px solid;
     border-radius: 100%;
     z-index: 0;

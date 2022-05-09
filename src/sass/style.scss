@@ -14,6 +14,10 @@
   padding: 0;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .container {
   margin: 0 auto;
   padding: 0 var(--container-offset);
@@ -21,6 +25,7 @@
 }
 
 @import "libs/breakpoint";
+@import "libs/animations";
 
 @import "blocks/title";
 @import "blocks/promo";

@@ -3,6 +3,12 @@
   padding-top: 350px;
   overflow: hidden;
   background: url(../../img/backround-promo.png) 100% 0% / cover no-repeat;
+  transition: all 0.6s;
+  transform: translateX(200%);
+
+  &.active {
+    transform: translateX(0);
+  }
 
   &-container {
     padding: 0;
@@ -11,6 +17,13 @@
   &-wrapper {
     width: 50%;
     text-align: left;
+
+    transform: translateX(-200%);
+    transition: all 0.8s ease 0.8s;
+
+    &.active {
+      transform: translateX(0);
+    }
   }
   &-header {
     padding-left: 10px;
@@ -71,6 +84,9 @@
     &-wrapper {
       width: 100%;
       color: white;
+    }
+    &-subheader {
+      padding-right: 0;
     }
     .divider {
       border: 1px solid #fff;
