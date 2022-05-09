@@ -1,0 +1,33 @@
+.footer {
+  opacity: 0;
+  transition: all 0.6s;
+  padding-bottom: 60px;
+  &-wrapper {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-link {
+      margin-right: 25px;
+      height: 80px;
+      width: 80px;
+      img {
+        width: 100%;
+        transition: all 0.1s;
+        &:hover {
+          filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.6));
+        }
+      }
+    }
+  }
+
+  &.active {
+    opacity: 1;
+  }
+}
+
+@include small-tablet {
+  .footer {
+    padding-bottom: 0px;
+  }
+}

@@ -1,0 +1,94 @@
+.promo {
+  //animation
+
+  transform: translateX(200%);
+  transition: all 1.3s ease;
+
+  min-height: 780px;
+  padding-top: 350px;
+  overflow: hidden;
+  background: url(../img/backround-promo.png) 100% 0% / cover no-repeat;
+
+  &-container {
+    padding: 0;
+  }
+
+  &-wrapper {
+    transform: translateX(-200%);
+
+    width: 50%;
+    text-align: left;
+    &.active {
+      transition: all 1.3s ease 0.8s;
+      transform: translateX(0);
+    }
+  }
+  &-header {
+    padding-left: 10px;
+    font-size: 44px;
+    font-weight: 500;
+    margin: 0;
+    span {
+      font-weight: 700;
+    }
+  }
+  &-subheader {
+    font-size: 32px;
+    font-weight: 500;
+  }
+  .divider {
+    border: 1px solid #000;
+    margin: 20px 0;
+    width: 430px;
+  }
+  &-descr {
+    padding-left: 25px;
+    font-style: italic;
+    span {
+      font-weight: bold;
+    }
+  }
+}
+
+.promo.active {
+  transform: translateX(0);
+}
+
+@include big-desktop {
+  .promo {
+    background: url(../img/background-promo.png) 36% no-repeat;
+    &-wrapper {
+      text-align: center;
+    }
+    &-header {
+      padding: 0;
+    }
+    &-subheader {
+      font-size: 29px;
+      padding-right: 20px;
+    }
+    .divider {
+      margin: 20px auto;
+      width: 345px;
+    }
+    &-descr {
+      padding: 0;
+      text-align: center;
+    }
+  }
+}
+
+@include small-tablet {
+  .promo {
+    padding-top: 250px;
+    background: url(../img/background-promo-min.jpg) center center / cover
+      no-repeat;
+    &-wrapper {
+      width: 100%;
+      color: white;
+    }
+    .divider {
+      border: 1px solid #fff;
+    }
+  }
+}
